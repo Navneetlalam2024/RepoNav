@@ -14,4 +14,11 @@ public class GlobalExceptionHandler {
         ApiResponse response =  ApiResponse.builder().message(message).success(true).status(HttpStatus.NOT_FOUND).build();
   return new ResponseEntity<ApiResponse>(response,HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ApiResponse> handlerResourceNotFoundException(RuntimeException ex){
+       // String message = ex.getMessage();
+        ApiResponse response =  ApiResponse.builder().message("CustomerID is not found !").success(true).status(HttpStatus.NOT_FOUND).build();
+        return new ResponseEntity<ApiResponse>(response,HttpStatus.NOT_FOUND);
+    }
 }
