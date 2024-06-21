@@ -8,19 +8,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
+/**
+ * @author Navneet Lalam
+ * @version 1.0
+ * @since 2024-06-20
+ */
 @Entity
 @Table(name = "TRANSACTION")
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TRANSACTION_ID")
+    @NotBlank(message="transactionId can not be blanked !")
     private Long transactionId;
 
     @Column(name = "CUSTOMER_ID")
+    @NotBlank(message="customerId can not be blanked !")
     private Long customerId;
 
     @Column(name = "TRANSACTION_DATE")
+    @NotBlank(message="transactionDate can not be blanked !")
     private Timestamp transactionDate;
 
     @Column(name = "AMOUNT")

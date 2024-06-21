@@ -1,5 +1,10 @@
 package com.example.demo.model;
 
+/**
+ * @author Navneet Lalam
+ * @version 1.0
+ * @since 2024-06-20
+ */
 public class Rewards {
     private long customerId;
     private long lastMonthRewardPoints;
